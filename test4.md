@@ -1,3 +1,2 @@
 # Title
-
-[link2][some-thing.html]
+[link2](some-thing.html)
