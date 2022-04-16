@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MarkdownParse {
 
@@ -17,6 +18,26 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
+
+            // String newline = System.getProperty("line.separator");
+            // if(!markdown.substring(closeParen).contains(newline)) {
+            //     currentIndex = closeParen + 1;
+            // }
+
+            //continue;
+
+            Scanner scan = new Scanner(markdown.substring(closeParen + 1));
+            boolean hasParen = false;
+            while(scan.hasNext()) {
+                if(scan.nextLine().equals(")")) {
+                    hasParen = true;
+                }
+            }
+            if(hasParen == false)
+                continue;
+
+            scan.close();
+
             currentIndex = closeParen + 1;
         }
 
