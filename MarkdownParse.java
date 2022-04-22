@@ -13,11 +13,19 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+
+            if(markdown.indexOf("[", currentIndex - 1) == -1) {
+                return toReturn;
+            }
+
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
+
             toReturn.add(markdown.substring(openParen + 1, closeParen));
+
+
 
             // String newline = System.getProperty("line.separator");
             // if(!markdown.substring(closeParen).contains(newline)) {
@@ -26,17 +34,17 @@ public class MarkdownParse {
 
             //continue;
 
-            Scanner scan = new Scanner(markdown.substring(closeParen + 1));
-            boolean hasParen = false;
-            while(scan.hasNext()) {
-                if(scan.nextLine().equals(")")) {
-                    hasParen = true;
-                }
-            }
-            if(hasParen == false)
-                continue;
+            // Scanner scan = new Scanner(markdown.substring(closeParen + 1));
+            // boolean hasParen = false;
+            // while(scan.hasNext()) {
+            //     if(scan.nextLine().equals(")")) {
+            //         hasParen = true;
+            //     }
+            // }
+            // if(hasParen == false)
+            //     continue;
 
-            scan.close();
+            // scan.close();
 
             currentIndex = closeParen + 1;
         }
