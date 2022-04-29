@@ -32,24 +32,11 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
 
+            // if(markdown.indexOf("!", currentIndex - 1) == openBracket - 1) {
+            //     currentIndex++;
+            // }
+
             toReturn.add(markdown.substring(openParen + 1, closeParen));
-
-            // String newline = System.getProperty("line.separator");
-            // if(!markdown.substring(closeParen).contains(newline)) {
-            //     currentIndex = closeParen + 1;
-            // }
-
-            // Scanner scan = new Scanner(markdown.substring(closeParen + 1));
-            // boolean hasParen = false;
-            // while(scan.hasNext()) {
-            //     if(scan.nextLine().equals(")")) {
-            //         hasParen = true;
-            //     }
-            // }
-            // if(hasParen == false)
-            //     continue;
-
-            // scan.close();
 
             currentIndex = closeParen + 1;
         }
