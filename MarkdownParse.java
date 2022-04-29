@@ -32,13 +32,13 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
 
-            // if(markdown.indexOf("!", currentIndex - 1) == openBracket - 1) {
-            //     currentIndex++;
-            // }
-
+            if(markdown.indexOf("!", currentIndex - 1) == openBracket - 1) {
+                currentIndex = closeParen+1;
+            }
+            else{
             toReturn.add(markdown.substring(openParen + 1, closeParen));
-
-            currentIndex = closeParen + 1;
+            currentIndex = closeParen + 1;                
+            }
         }
 
         return toReturn;
