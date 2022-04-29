@@ -19,7 +19,7 @@ public class MarkdownParseTest {
     @Test
     public void testGetLinks() throws IOException{
 
-        String[] args = new String[] {"/Users/hantian_lin/Documents/GitHub/markdown-parser/test-file.md"};
+        String[] args = new String[] {"test-file.md"};
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         
