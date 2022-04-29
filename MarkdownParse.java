@@ -14,18 +14,18 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
 
-            // if(markdown.indexOf("[", currentIndex - 1) == -1) {
-            //     return toReturn;
-            // }
-            // if(markdown.indexOf("]", currentIndex - 1) == -1) {
-            //     return toReturn;
-            // }
-            // if(markdown.indexOf("(", currentIndex - 1) == -1) {
-            //     return toReturn;
-            // }
-            // if(markdown.indexOf(")", currentIndex - 1) == -1) {
-            //     return toReturn;
-            // }
+            if(markdown.indexOf("[", currentIndex - 1) == -1) {
+                return toReturn;
+            }
+            if(markdown.indexOf("]", currentIndex - 1) == -1) {
+                return toReturn;
+            }
+            if(markdown.indexOf("(", currentIndex - 1) == -1) {
+                return toReturn;
+            }
+            if(markdown.indexOf(")", currentIndex - 1) == -1) {
+                return toReturn;
+            }
 
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
@@ -39,18 +39,17 @@ public class MarkdownParse {
                 currentIndex = closeParen + 1;
             }
 
-            Scanner scan = new Scanner(markdown.substring(closeParen + 1));
-            boolean hasParen = false;
-            while(scan.hasNext()) {
-                if(scan.nextLine().equals(")")) {
-                    hasParen = true;
-                }
-            }
-            if(hasParen == false)
-                continue;
+            // Scanner scan = new Scanner(markdown.substring(closeParen + 1));
+            // boolean hasParen = false;
+            // while(scan.hasNext()) {
+            //     if(scan.nextLine().equals(")")) {
+            //         hasParen = true;
+            //     }
+            // }
+            // if(hasParen == false)
+            //     continue;
 
-            scan.close();
-
+            // scan.close();
 
             currentIndex = closeParen + 1;
         }
