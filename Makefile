@@ -1,5 +1,5 @@
-CPATH=lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:.
-CPATH2=lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore:.
+CPATH=.:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar
+CPATH2=.:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore:.
 
 test: MarkdownParse.class MarkdownParseTest.class run
 
