@@ -18,7 +18,8 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks() throws IOException{
-        Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/test-file.md");
+        // Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/test-file.md");
+        Path fileName = Path.of("test-file.md");
         String content = Files.readString(fileName);
         
         assertEquals(List.of("https://something.com", "some-thing.html"), 
@@ -27,7 +28,8 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks2() throws IOException{
-        Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/mytest-file.md");
+        // Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/mytest-file.md");
+        Path fileName = Path.of("mytest-file.md");
         String content = Files.readString(fileName);
 
         assertEquals(List.of("https://something.com", "some-thing.html",
