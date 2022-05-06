@@ -3,7 +3,7 @@ git clone $1
 cp GradingTests.java markdown-parser/
 cd markdown-parser
 
-if [-f "MarkdownParse.java"]; then
+if [ -f "MarkdownParse.java" ]; then
     echo "MarkdownParse.java exists."
 else
     echo "MarkdownParse.java does not exist."
