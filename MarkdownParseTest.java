@@ -70,6 +70,14 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks2() throws IOException{
+<<<<<<< HEAD
+=======
+        Path fileName = Path.of("test6.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("b.com", "a.com(())", "example.com",links));
+    }
+>>>>>>> 3e9e67a191e056703de567fb8f4a8d3da492fabc
 
         Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/mytest-file.md");
         // Path fileName = Path.of("mytest-file.md");
@@ -84,7 +92,11 @@ public class MarkdownParseTest {
         Path fileName = Path.of("test7.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
+<<<<<<< HEAD
         assertEquals(List.of(" https://www.twitter.com"),links);
+=======
+        assertEquals(List.of("https://www.twitter.com",links));
+>>>>>>> 3e9e67a191e056703de567fb8f4a8d3da492fabc
     }
 
 }
