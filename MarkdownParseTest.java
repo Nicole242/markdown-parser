@@ -35,7 +35,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("test6.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("b.com", "a.com(())", "example.com",links));
+        assertEquals(List.of("b.com", "a.com(())", "example.com"),links);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("test7.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("https://www.twitter.com",links));
+        assertEquals(List.of("https://www.twitter.com"),links);
     }
 
 
