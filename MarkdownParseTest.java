@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.*;
+<<<<<<< HEAD
 
 public class MarkdownParseTest {
     //private MarkdownParse links = new MarkdownParse();
@@ -24,10 +25,34 @@ public class MarkdownParseTest {
         
         assertEquals(List.of("https://something.com", "some-thing.html"), 
                             MarkdownParse.getLinks(content));
+=======
+public class MarkdownParseTest {
+
+    @Test
+    public void addition() {
+       assertEquals(2, 1 + 1);
+    }
+
+   @Test
+    public void testGetLinks() throws IOException{
+        Path fileName = Path.of("test-file.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://something.com", "some-thing.html"),links);
+    }
+
+    @Test
+    public void testGetLinks1() throws IOException{
+        Path fileName = Path.of("test5.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content); 
+        assertEquals(List.of("url.com", "`google.com", "google.com", "ucsd.edu)") ,links);
+>>>>>>> 2412162d26a63e3cb95ca1c8435d48791de8f81a
     }
 
     @Test
     public void testGetLinks2() throws IOException{
+<<<<<<< HEAD
         Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/mytest-file.md");
         // Path fileName = Path.of("mytest-file.md");
         String content = Files.readString(fileName);
@@ -68,3 +93,25 @@ public class MarkdownParseTest {
         MarkdownParse.getLinks(content));
     }
 }
+=======
+        Path fileName = Path.of("test6.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("b.com", "a.com(())", "example.com",links);
+    }
+
+    @Test
+    public void testGetLinks3() throws IOException{
+        Path fileName = Path.of("test7.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://www.twitter.com",links);
+    }
+
+
+    
+
+}
+
+
+>>>>>>> 2412162d26a63e3cb95ca1c8435d48791de8f81a
