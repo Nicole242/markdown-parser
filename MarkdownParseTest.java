@@ -63,8 +63,8 @@ public class MarkdownParseTest {
         // Path fileName = Path.of("snippet3.md");
         String content = Files.readString(fileName);
         assertEquals(List.of("https://www.twitter.com",
-                        "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule",
-                        "https://cse.ucsd.edu/"),
+                            "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule",
+                            "https://cse.ucsd.edu/"),
         MarkdownParse.getLinks(content));
     }
 }
