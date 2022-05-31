@@ -23,9 +23,19 @@ public class MarkdownParseTest {
         String content = Files.readString(fileName);
         
         assertEquals(List.of("https://something.com", "some-thing.html"), 
-        MarkdownParse.getLinks(content));
+                            MarkdownParse.getLinks(content));
     }
 
+    @Test
+    public void testGetLinks2() throws IOException{
+        Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/mytest-file.md");
+        // Path fileName = Path.of("mytest-file.md");
+        String content = Files.readString(fileName);
+
+        assertEquals(List.of("https://something.com", "some-thing.html",
+                    "www.google.com"), 
+        MarkdownParse.getLinks(content));
+    }
 
     @Test
     public void testSnippet1() throws IOException{
@@ -57,47 +67,4 @@ public class MarkdownParseTest {
                             "https://cse.ucsd.edu/"),
         MarkdownParse.getLinks(content));
     }
-
-
-
-    @Test
-    public void testGetLinks1() throws IOException{
-        Path fileName = Path.of("test5.md");
-        String content = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(content); 
-        assertEquals(List.of("url.com", "`google.com", "google.com", "ucsd.edu)") ,links);
-    }
-
-    @Test
-    public void testGetLinks2() throws IOException{
-<<<<<<< HEAD
-=======
-        Path fileName = Path.of("test6.md");
-        String content = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("b.com", "a.com(())", "example.com",links));
-    }
->>>>>>> 3e9e67a191e056703de567fb8f4a8d3da492fabc
-
-        Path fileName = Path.of("/Users/hantian_lin/Documents/GitHub/markdown-parser/mytest-file.md");
-        // Path fileName = Path.of("mytest-file.md");
-        String content = Files.readString(fileName);
-
-        assertEquals(List.of("https://something.com", "some-thing.html",
-                    "www.google.com"),
-        MarkdownParse.getLinks(content));
-    }
-    @Test
-    public void testGetLinks3() throws IOException{
-        Path fileName = Path.of("test7.md");
-        String content = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-<<<<<<< HEAD
-        assertEquals(List.of(" https://www.twitter.com"),links);
-=======
-        assertEquals(List.of("https://www.twitter.com",links));
->>>>>>> 3e9e67a191e056703de567fb8f4a8d3da492fabc
-    }
-
 }
-
